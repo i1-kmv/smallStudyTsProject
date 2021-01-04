@@ -26,13 +26,23 @@ function Rating() {
 function Accordion() {
     return (
         <>
-            <h3>menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+          <AccordionTitle/>
+          <AccordionBody/>
         </>
+    )
+}
+
+function AccordionTitle(){
+    return   <h3>menu</h3>
+}
+
+function AccordionBody(){
+    return   (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 
