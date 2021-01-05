@@ -10,8 +10,13 @@ function App() {
     return (
         <div>
             <PageTitle title={'This is a page'}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
             <Rating value={3}/>
-            <Accordion title={'accordion title'}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+            <Accordion title={'Menu'} collapsed={true}/>
+            <Accordion title={'Users'} collapsed={true}/>
         </div>
     );
 }
