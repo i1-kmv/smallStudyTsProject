@@ -3,6 +3,8 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOf} from "./components/OnOf/OnOf";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+
 
 
 
@@ -10,7 +12,7 @@ import {OnOf} from "./components/OnOf/OnOf";
 function App() {
     return (
         <div>
-            <OnOf mode={false}/>
+            <OnOf/>
             <PageTitle title={'This is a page'}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -19,6 +21,7 @@ function App() {
             <Rating value={5}/>
             <Accordion title={'Menu'} collapsed={true}/>
             <Accordion title={'Users'} collapsed={true}/>
+            <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
         </div>
     );
 }

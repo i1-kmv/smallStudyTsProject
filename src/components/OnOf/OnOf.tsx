@@ -1,24 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 
-type OnOfPropsType = {
-    mode: boolean
-}
+export function OnOf() {
 
-export function OnOf(props:OnOfPropsType) {
+    let [mode, setMode] = useState(true)
 
     let colorOn
     let colorOff
     let circleColor
-     if (props.mode) {
+     if (mode) {
          colorOn = 'green'
          circleColor = 'green'
      } else {
          colorOn = ''
      }
 
-    if (!props.mode) {
+    if (!mode) {
         colorOff = 'red'
         circleColor = 'red'
     } else {
@@ -28,10 +26,10 @@ export function OnOf(props:OnOfPropsType) {
 
 
     return (
-        <div style={{display: 'flex'}}>
-            <div style={{width: '50px', height: '50px', backgroundColor: colorOn, marginRight: '15px', border: '1px solid'}}>On</div>
-            <div style={{width: '50px', height: '50px', backgroundColor:colorOff, marginRight: '15px', border: '1px solid'}}>Off</div>
-            <div style={{width: '50px', height: '50px',borderRadius: '50%',  backgroundColor: circleColor, border: '1px solid' }}></div>
+        <div style={{display: 'flex', alignItems:'center'}}>
+            <div onClick={() => setMode(true)} style={{width: '50px', height: '50px', backgroundColor: colorOn, marginRight: '15px', border: '1px solid'}}>On</div>
+            <div onClick={() => setMode(false)} style={{width: '50px', height: '50px', backgroundColor:colorOff, marginRight: '15px', border: '1px solid'}}>Off</div>
+            <div style={{width: '20px', height: '20px',borderRadius: '50%',  backgroundColor: circleColor, border: '1px solid' }}></div>
         </div>
     )
 }
