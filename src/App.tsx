@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import {OnOf} from "./components/OnOf/OnOf";
 
 
 
@@ -9,6 +10,7 @@ import {Rating} from "./components/Rating/Rating";
 function App() {
     return (
         <div>
+            <OnOf mode={false}/>
             <PageTitle title={'This is a page'}/>
             <Rating value={1}/>
             <Rating value={2}/>
