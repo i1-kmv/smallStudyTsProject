@@ -14,11 +14,7 @@ function App() {
         <div>
             <OnOf/>
             <PageTitle title={'This is a page'}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <Rating/>
             <Accordion title={'Menu'} collapsed={true}/>
             <Accordion title={'Users'} collapsed={true}/>
             <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
