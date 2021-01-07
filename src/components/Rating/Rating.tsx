@@ -1,34 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
+
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
+type RatingPropsTypes = {
+    value: number
+    onClick: (value: RatingValueType) => void
+}
+
+export function Rating(props: RatingPropsTypes) {
 
 
-
-export function Rating() {
-
-    const [value, setValue] = useState(0)
-
-    console.log(value)
-
-        return (
-            <div>
-                <Star value={value} onClick={() => setValue(1)} selected={value > 0}/>
-                <Star value={value} onClick={() =>setValue(2)} selected={value > 1}/>
-                <Star value={value} onClick={() =>setValue(3)} selected={value > 2}/>
-                <Star value={value} onClick={() =>setValue(4)} selected={value > 3}/>
-                <Star value={value} onClick={() =>setValue(5)} selected={value > 4}/>
-            </div>
-        )
+    return (
+        <div>
+            <Star selected={props.value > 0} onClick={props.onClick} value={1}/>
+            <Star selected={props.value > 1} onClick={props.onClick} value={2}/>
+            <Star selected={props.value > 2} onClick={props.onClick} value={3}/>
+            <Star selected={props.value > 3} onClick={props.onClick} value={4}/>
+            <Star selected={props.value > 4} onClick={props.onClick} value={5}/>
+        </div>
+    )
 }
 
 type StarPropsType = {
     selected: boolean
-    onClick: Function
-    value: number
+    onClick: (value: RatingValueType) => void
+    value: RatingValueType
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected) {
-        return <span onClick={()=>props.onClick(props.value)} style={{display:'inline-block', marginRight:'5px', cursor:'pointer'}}><b>star</b></span>
-    } else {
-        return <span onClick={()=>props.onClick(props.value)} style={{display:'inline-block', marginRight:'5px',cursor:'pointer'}}>star</span>
-    }
+        return <span style={{display: 'inline-block', marginRight: '5px', cursor: 'pointer'}} onClick={() => props.onClick(props.value)}>{props.selected && <b>star</b> || 'star' }</span>
+
 }
