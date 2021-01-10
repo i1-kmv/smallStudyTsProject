@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 type OnOfPropsTypes = {
     value: boolean
-    setMode: () => void
+    setMode?: () => void
 }
 
 export function OnOf(props: OnOfPropsTypes) {
