@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOf} from "./components/OnOf/OnOf";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolRating} from "./components/Rating/UncontrolRating";
+import {Accordion} from "./components/Accordion/Accordion";
 
 
 
@@ -15,7 +15,6 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [mode, setMode] = useState(true)
-    console.log(accordionCollapsed)
     return (
         <div>
             <OnOf value={mode} setMode={() => setMode(!mode)}/>

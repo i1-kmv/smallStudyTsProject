@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {action} from "@storybook/addon-actions"
 import {OnOf} from './OnOf'
 
@@ -7,6 +7,12 @@ export default {
     component: 'OnOf'
 }
 
-export const onMode = () => <OnOf value={true} setMode={() => {}}/>
-export const ofMode = () => <OnOf value={false} setMode={() => {}}/>
+const callback = action('on or off clicked')
 
+export const onMode = () => <OnOf value={true} setMode={callback}/>
+export const ofMode = () => <OnOf value={false} setMode={callback}/>
+
+export const OnOfChanging = () => {
+    const [value, setMode] = useState(false)
+   return  <OnOf value={value} setMode={() => setMode(!value)}/>
+}
