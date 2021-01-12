@@ -15,13 +15,18 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [mode, setMode] = useState(true)
+    const items = [
+        {title: 'item1', value: 'item1'},
+        {title: 'item2', value: 'item2'},
+        {title: 'item3', value: 'item3'}
+        ]
     return (
         <div>
             <OnOf value={mode} setMode={() => setMode(!mode)}/>
             <PageTitle title={'This is a page'}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolRating/>
-            <Accordion title={'Menu'} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+            <Accordion onClick={(value) => alert(value)} title={'Menu'} items={items} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
             <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
         </div>
     );
