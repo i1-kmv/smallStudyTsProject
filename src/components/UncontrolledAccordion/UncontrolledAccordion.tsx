@@ -1,5 +1,14 @@
 import React, {useState} from "react";
 
+type ActionType = {
+    type:string
+}
+const reducer = (state:boolean, action:ActionType) => {
+
+    return state
+}
+
+
 type AccordionPropsType = {
     title: string
 }
