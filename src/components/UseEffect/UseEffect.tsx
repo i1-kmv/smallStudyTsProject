@@ -83,27 +83,22 @@ export const Timer = () => {
 
 }
 
+const  getMinimumTwoNumbers = (num: number) => num < 10 ? '0' + num : num
+
 export const Clock = () => {
-    const [seconds, setSeconds] = useState(new Date().getSeconds())
-    const [minutes, setMinutes] = useState(new Date().getMinutes())
-    const [hours, setHours] = useState(new Date().getHours())
+    const [date, setDate] = useState(new Date())
+
     useEffect(() => {
-        setInterval(() => {
-            setSeconds(( ) => new Date().getSeconds())
+        const interval = setInterval(() => {
+            setDate(( ) => new Date())
         }, 1000)
-    }, [])
-    useEffect(() => {
-        setInterval(() => {
-            setMinutes(( ) => new Date().getMinutes())
-        }, 1000)
-    }, [])
-    useEffect(() => {
-        setInterval(() => {
-            setHours(( ) => new Date().getHours())
-        }, 1000)
+
+       return () =>  clearInterval(interval)
     }, [])
 
+
+
     return <>
-        Our time: {`${hours}:${minutes}:${seconds}`}
+        Our time: {`${getMinimumTwoNumbers(date.getHours())}:${getMinimumTwoNumbers(date.getMinutes())}:${getMinimumTwoNumbers(date.getSeconds())}`}
     </>
 }
