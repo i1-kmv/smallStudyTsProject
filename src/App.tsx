@@ -5,7 +5,7 @@ import {OnOf} from "./components/OnOf/OnOf";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolRating} from "./components/Rating/UncontrolRating";
 import {Accordion} from "./components/Accordion/Accordion";
-import {Example1} from "./components/UseEffect/UseEffect";
+import {Clock, Example1, Timer} from "./components/UseEffect/UseEffect";
 
 
 
@@ -30,6 +30,10 @@ function App() {
             <Accordion onClick={(value) => alert(value)} title={'Menu'} items={items} collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
             <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
             <Example1/>
+            <br/>
+            <Timer/>
+            <br/>
+            <Clock/>
         </div>
     );
 }
